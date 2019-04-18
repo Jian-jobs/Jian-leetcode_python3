@@ -1,5 +1,5 @@
 # leetcode_python3
-my solutions of problems in leetcode 
+This repository shares my solutions of problems in leetcode 
 
 
-All the problems on https://leetcode.com/problemset/all/
+All the problems on [leetcode] (https://leetcode.com/problemset/all/)
