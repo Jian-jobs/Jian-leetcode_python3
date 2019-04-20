@@ -1,6 +1,11 @@
 # leetcode_python3
 This repository shares my solutions of problems in leetcode 
 
+Reference:
+
+[huahua's blog](https://zxi.mytechroad.com/blog/)
+[huahua's videos](https://www.youtube.com/user/xxfflower/playlists)
+
 
 All the problems on [LeetCode](https://leetcode.com/problemset/all/)  
 
