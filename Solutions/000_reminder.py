@@ -1,5 +1,0 @@
-'''
-reminder for "leetcode" practice
-
-
-'''
