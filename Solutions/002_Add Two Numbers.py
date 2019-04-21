@@ -17,35 +17,182 @@ Explanation: 342 + 465 = 807.
 
 '''
 
+
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
 
-    def my_test(self):
-        print(self.val)
-        if self.next:
-            self.next.my_test()
+
 
 
 class Solution:
     def addTwoNumbers(self, l1, l2):
-        def toint(node):
-            return node.val + 10 * toint(node.next) if node else 0
-        def tolist(n):
-            node = ListNode(n % 10)
-            if n > 9:
-                node.next = tolist(n / 10)
-            return node
-        return tolist(toint(l1) + toint(l2))
+        '''
+
+        :param l1:  ListNode
+        :param l2:  ListNode
+        :return:   ListNode
+        '''
+        dummy = ListNode(0)
+        res = dummy
+        carry = 0
+        if l1 ==None:
+            return l2
+
+        if l2 ==None:
+            return l1
+
+        while l1 and l2:
+            res.next = ListNode((l1.val +l2.val +carry) %10)
+            carry = (l1.val +l2.val +carry) // 10
+            l1 = l1.next
+            l2 = l2.next
+            res = res.next
+
+        if l1:
+            while l1:
+                res.next = ListNode((l1.val +carry) %10)
+                carry = (l1.val +carry) // 10
+                l1 = l1.next
+                res = res.next
+
+        if l2:
+            while l2:
+                res.next = ListNode((l2.val + carry) % 10)
+                carry = (l2.val + carry) // 10
+                l2 = l2.next
+                res = res.next
+
+        if carry ==1:
+            res.next = ListNode(1)
+
+        return res.val
+#       return dummy.next in LeetCode
+
+
+
+# l1 = ListNode(2)
+# l1.next = ListNode(4)
+# # l1.next.next = ListNode(3)
+#
+# l2 = ListNode(5)
+# l2.next = ListNode(6)
+# # l2.next.next = ListNode(4)
+# print(Solution().addTwoNumbers(l1, l2))
+
+
 
 
 l1 = ListNode(2)
-# l1.next = ListNode(4)
-# l1.next.next = ListNode(3)
 l2 = ListNode(5)
-# l2.next = ListNode(6)
-# l2.next.next = ListNode(4)
-ls = Solution().addTwoNumbers(ListNode(l2),ListNode(l2))
-print(ls)
+print(Solution().addTwoNumbers(l1, l2))
+
+l1.next = ListNode(4)
+l2.next = ListNode(6)
+print(Solution().addTwoNumbers(l1, l2))
+
+l1.next.next = ListNode(3)
+l2.next.next = ListNode(4)
+print(Solution().addTwoNumbers(l1, l2))
+
+
+
+
+
+
+
+
+
+
+'''
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+class Solution:
+    def addTwoNumbers(self, l1, l2):
+
+        dummy = ListNode(0)
+        res = dummy
+        carry = 0
+        while l1 or l2 or carry > 0:
+            carry += (l1.val if l1 else 0) + (l2.val if l2 else 0)
+            print('carry:', carry)
+            l1 = l1.next if l1 else None
+            # print('new l1', l1.val if l1 else None)
+            l2 = l2. next if l2 else None
+            # print('new l2', l2.val if l2 else None)
+            res.next = ListNode(carry % 10)
+            print('res:', res.val)
+            print('res.next', res.next.val)
+            # print('res.next.next:', res.next.next.val if res.next.val else None)
+            # print('res.next.next.next:', res.next.next.next.val if res.next.next.val else None)
+            carry //= 10
+            print('"carry":',carry)
+            print('dummy:', dummy.val)
+            print('dummy.next:', dummy.next.val)
+            # print('dummy.next.next:', dummy.next.next.val if dummy.next.val else None)
+            # print('dummy.next.next.next:', dummy.next.next.next.val if dummy.next.next.val else None)
+            res = res.next
+        return res.val
+
+
+l1 = ListNode(2)
+l1.next = ListNode(4)
+l1.next.next = ListNode(3)
+
+l2 = ListNode(5)
+l2.next = ListNode(6)
+l2.next.next = ListNode(4)
+print(Solution().addTwoNumbers(l1, l2))
+
+
+>>>carry: 7
+    res: 0
+    res.next 7
+    "carry": 0
+    dummy: 0
+    dummy.next: 7
+    carry: 10
+    res: 7
+    res.next 0
+    "carry": 1
+    dummy: 0
+    dummy.next: 7
+    carry: 8
+    res: 0
+    res.next 8
+    "carry": 0
+    dummy: 0
+    dummy.next: 7
+    8
+res keep moving forward
+dummy didn't
+
+'''
+
+
+
+'''  
+"""
+Author: Huahua
+Running time: 112 ms
+"""
+class Solution:
+  def addTwoNumbers(self, l1, l2):
+    s = 0
+    dummy = ListNode(0)
+    tail = dummy
+    while l1 or l2 or s > 0:
+      s += (l1.val if l1 else 0) + (l2.val if l2 else 0)
+      l1 = l1.next if l1 else None
+      l2 = l2.next if l2 else None
+      tail.next = ListNode(s % 10)
+      s //= 10
+      tail = tail.next
+    return tail.val
+
+'''
