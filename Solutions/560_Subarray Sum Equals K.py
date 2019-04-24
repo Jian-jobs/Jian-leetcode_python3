@@ -53,6 +53,20 @@ value = numbers of occurrence of the prefixSum value
   
 '''
 from collections import defaultdict
+'''
+defaultdict(function_factory): 构建一个是类似factory的对象，其中key的值，自行赋值，
+但value的类型，是function——factory的类实例，且有默认值
+defaultdict(int)：创建类似dictionary的对象，之中value都是int实例，
+对不存在的的key，默认value 是 int()的默认值0
+
+s = 'mississippi'
+d = defaultdict(int)
+for k in s:
+    d[k] += 1
+print(list(d.items())) 
+>>[('m', 1), ('i', 4), ('s', 4), ('p', 2)]
+
+'''
 class Solution:
     def subarraySum(self, nums, k):
         '''
