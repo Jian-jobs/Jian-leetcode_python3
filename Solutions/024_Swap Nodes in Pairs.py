@@ -34,7 +34,7 @@ class Solution:
         dummy = ListNode(0)
         dummy.next = head
         res = dummy
-
+        if not head or not head.next: return head
         while res.next and res.next.next:
             first = res.next
             second = res.next.next
