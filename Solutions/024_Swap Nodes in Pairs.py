@@ -51,7 +51,7 @@ l1.next.next = ListNode(3)
 
 l = Solution().swapPairs(l1)
 
-print(l1.val)
+print(l.val)
 
 # recursion
 
