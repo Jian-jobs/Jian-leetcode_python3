@@ -27,3 +27,10 @@ class Solution:
         :param lists: : List[ListNode]
         :return: ListNode
         '''
+        dummy = ListNode(0)
+        new = dummy
+        for i in range(len(lists)):
+            new.next = i
+            print(new.val)
+        return dummy.next
+
