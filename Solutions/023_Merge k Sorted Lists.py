@@ -24,6 +24,15 @@ reference：
 入门堆（heapq）
 https://blog.csdn.net/u013206202/article/details/78968438
 
+heapq.heappush(heap,item)
+注：heap为定义堆，item增加的元素
+
+>> import heapq
+>> h = []
+>> heapq.heappush(h,2)
+>> h
+[2]
+-------------------------------------------------
 heapq.heapify(list)
 注：将列表转换为堆
 
@@ -49,25 +58,21 @@ class Solution:
         :return: ListNode
         '''
         import heapq
-        head = ListNode(-1)
-        move = head
-        heap = []
-        heapq.heapify(heap)
-        [heapq.heappush(heap, (l.val, i)) for i, l in enumerate(lists) if l]
-        while heap:
-            curval = curindex = heapq.heappop(heap)
-            curhead = lists[curindex]
-            curnext = curhead.next
-            move.next = curhead
-            curhead.next = None
-            move = curhead
-            curhead = curnext
+        result = ListNode(-1)
+        cur = result
+        p = list()
+        x = 0
+        for i in lists:
+            if i:
+                heapq.heappush(p, (i.val, i))
 
-            if curhead:
-                lists[curindex] = curhead
-                heapq.heappush(heap, (curhead.val, curindex))
+        while len(p)>0:
+            cur.next = heapq.heappop(p)[1]
+            cur = cur.next
+            if cur.next:
+                heapq.heappush(p, (cur.next.val, cur.next))
 
-        return head.next
+        return result.next
 
 
 
