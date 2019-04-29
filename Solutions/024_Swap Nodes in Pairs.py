@@ -27,7 +27,6 @@ class ListNode:
 class Solution:
     def swapPairs(self, head):
         '''
-
         :param head: ListNode
         :return: ListNode
         '''
