@@ -41,6 +41,27 @@ heapq.heapify(list)
 >> list
 [1, 1, 3, 5, 2, 5, 8, 9, 6]
 -------------------------------------------------
+heapq.heapreplace(heap.item)
+注：删除最小元素值，添加新的元素值
+
+>> list
+[1, 2, 3, 5, 6, 5, 8, 9]
+>> heapq.heapreplace(list,99)
+1
+>> list
+[2, 5, 3, 9, 6, 5, 8, 99]
+-------------------------------------------------
+heapq.heappop(heap)
+注：删除最小值，因为堆的特征是heap[0]永远是最小的元素，所以一般都是删除第一个元素。
+
+>> list
+[1, 1, 3, 5, 2, 5, 8, 9, 6]
+>> heapq.heappop(list)
+1
+>> list
+[1, 2, 3, 5, 6, 5, 8, 9]
+-------------------------------------------------
+
 '''
 
 
@@ -58,21 +79,54 @@ class Solution:
         :return: ListNode
         '''
         import heapq
-        result = ListNode(-1)
-        cur = result
-        p = list()
-        x = 0
-        for i in lists:
-            if i:
-                heapq.heappush(p, (i.val, i))
 
-        while len(p)>0:
-            cur.next = heapq.heappop(p)[1]
+        dummy = ListNode(0)
+        cur = dummy
+        heap = []
+
+        for i in range(len(lists)):
+            if lists[i]:
+                heapq.heappush(heap, (lists[i].val, i, lists[i]))
+                print('heap1', heap)
+        while heap:
+            node = heapq.heappop(heap)
+            print('node', node)
+            index = node[1]
+            cur.next = node[2]
             cur = cur.next
-            if cur.next:
-                heapq.heappush(p, (cur.next.val, cur.next))
 
-        return result.next
+            if cur.next:
+                heapq.heappush(heap, (cur.next.val, index, cur.next))
+
+                print('cur', cur.val)
+                print('heap2', heap)
+        return dummy.next
+
+'''
+output:
+
+heap1 [(1, 0, <precompiled.listnode.ListNode object at 0x7fb7276edcc0>)]
+heap1 [(1, 0, <precompiled.listnode.ListNode object at 0x7fb7276edcc0>), (1, 1, <precompiled.listnode.ListNode object at 0x7fb7276edda0>)]
+heap1 [(1, 0, <precompiled.listnode.ListNode object at 0x7fb7276edcc0>), (1, 1, <precompiled.listnode.ListNode object at 0x7fb7276edda0>), (2, 2, <precompiled.listnode.ListNode object at 0x7fb7276f5278>)]
+node (1, 0, <precompiled.listnode.ListNode object at 0x7fb7276edcc0>)
+cur 1
+heap2 [(1, 1, <precompiled.listnode.ListNode object at 0x7fb7276edda0>), (2, 2, <precompiled.listnode.ListNode object at 0x7fb7276f5278>), (4, 0, <precompiled.listnode.ListNode object at 0x7fb7276edd30>)]
+node (1, 1, <precompiled.listnode.ListNode object at 0x7fb7276edda0>)
+cur 1
+heap2 [(2, 2, <precompiled.listnode.ListNode object at 0x7fb7276f5278>), (4, 0, <precompiled.listnode.ListNode object at 0x7fb7276edd30>), (3, 1, <precompiled.listnode.ListNode object at 0x7fb7276eddd8>)]
+node (2, 2, <precompiled.listnode.ListNode object at 0x7fb7276f5278>)
+cur 2
+heap2 [(3, 1, <precompiled.listnode.ListNode object at 0x7fb7276eddd8>), (4, 0, <precompiled.listnode.ListNode object at 0x7fb7276edd30>), (6, 2, <precompiled.listnode.ListNode object at 0x7fb7276f5358>)]
+node (3, 1, <precompiled.listnode.ListNode object at 0x7fb7276eddd8>)
+cur 3
+heap2 [(4, 0, <precompiled.listnode.ListNode object at 0x7fb7276edd30>), (6, 2, <precompiled.listnode.ListNode object at 0x7fb7276f5358>), (4, 1, <precompiled.listnode.ListNode object at 0x7fb7276ede10>)]
+node (4, 0, <precompiled.listnode.ListNode object at 0x7fb7276edd30>)
+cur 4
+heap2 [(4, 1, <precompiled.listnode.ListNode object at 0x7fb7276ede10>), (6, 2, <precompiled.listnode.ListNode object at 0x7fb7276f5358>), (5, 0, <precompiled.listnode.ListNode object at 0x7fb7276edd68>)]
+node (4, 1, <precompiled.listnode.ListNode object at 0x7fb7276ede10>)
+node (5, 0, <precompiled.listnode.ListNode object at 0x7fb7276edd68>)
+node (6, 2, <precompiled.listnode.ListNode object at 0x7fb7276f5358>)
+'''
 
 
 
