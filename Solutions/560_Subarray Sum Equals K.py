@@ -31,7 +31,7 @@ K = nums[j+1] + ... + nums[n]
 prefixSum[x] = sum of subarray (0, x): nums[0]+ .. + nums[x]
 
 prefixSum[x] = prefixSum[x-1] + nums[x]
-
+ 
 sum of subarray (i, j) = prefixSum[j] - prefixSum[i-1]
 
 as: prefixSum[j] = nums[0] + ... + nums[i-1] + nums[i]+ ... + nums[j]
