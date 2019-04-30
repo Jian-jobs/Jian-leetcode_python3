@@ -35,7 +35,7 @@ prefixSum[x] = prefixSum[x-1] + nums[x]
 sum of subarray (i, j) = prefixSum[j] - prefixSum[i-1]
 
 as: prefixSum[j] = nums[0] + ... + nums[i-1] + nums[i]+ ... + nums[j]
-  prefixSum[n-1] = nums[0] + ... + nums[i-1] 
+  prefixSum[i-1] = nums[0] + ... + nums[i-1] 
 
 为了避免sum of subarray (i, j) = prefixSum[j] - prefixSum[i-1] 中 i= 0时， i-1=-1
 prefixSum最前面加一个0： 
@@ -83,7 +83,7 @@ class Solution:
         for i in range(len(nums)):
             cur_sum += nums[i]  # increment current sum
             if cur_sum - k in prefix:
-                count += prefix[cur_sum - k]
+                count += prefix[cur_sum - k] # ???
             prefix[cur_sum] += 1
         return count
 
