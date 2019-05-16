@@ -1,11 +1,11 @@
-
 #!usr/bin/env python3
 # -*- coding:utf-8 -*-
 '''
 1. Two Sum
 
 https://leetcode.com/problems/two-sum/
-similar problem: 560: https://leetcode.com/problems/subarray-sum-equals-k/
+similar problem: "560. Subarray Sum Equals K"
+https://leetcode.com/problems/subarray-sum-equals-k/
 
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
@@ -82,6 +82,7 @@ index = 3：
     target-nums[index]=2！！
     return [dict[target - nums[index]，index]
     即[dict[2]的value 0, 3]
+    
 ----------   print dictionary： 
 for k, v in dict.items():
     print(k, '=>', v)
