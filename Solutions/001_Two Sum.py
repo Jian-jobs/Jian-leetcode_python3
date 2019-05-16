@@ -41,6 +41,12 @@ print(Solution().twoSum([2, 7, 11, 15], 9))
 '''
 enumerate() method: faster and less memory usage
 
+enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列，
+同时列出数据和数据下标，一般用在 for 循环当中。
+>>>seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+>>> list(enumerate(seasons))
+[(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]
+
 class Solution(object):
     def twoSum(self, nums, target):
         """
