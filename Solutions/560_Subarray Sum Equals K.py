@@ -45,7 +45,7 @@ class Solution:
         return count
 
 print(Solution().subarraySum([1,1,1], 2))
-
+print(Solution().subarraySum([1], 0))
 '''
 思路：
 Example 1:
