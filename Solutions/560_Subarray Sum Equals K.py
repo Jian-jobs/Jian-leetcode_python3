@@ -37,10 +37,11 @@ class Solution:
         cur_sum = 0
         for i in range(len(nums)):
             cur_sum += nums[i]
-            prefix[cur_sum] += 1 #hashmap<cur_sum, occur times>
+
             if cur_sum - k in prefix:
                 count += prefix[cur_sum - k]
-
+            prefix[cur_sum] += 1
+            # hashmap<cur_sum, occur times> must be after the if loop to avoid one element situation
         return count
 
 print(Solution().subarraySum([1,1,1], 2))
