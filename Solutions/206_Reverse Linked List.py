@@ -1,6 +1,10 @@
 '''
 206. Reverse Linked List
 
+https://leetcode.com/problems/reverse-linked-list/
+similar problem: "24. Swap Nodes in Pairs"
+https://leetcode.com/problems/swap-nodes-in-pairs/discuss/171788/Python-or-Dummynode-tm
+
 Reverse a singly linked list.
 
 Example:
