@@ -32,3 +32,12 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
+        fast = slow = head  # or fast, slow = head, head
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+            if fast == slow:
+                return slow
+
+        return False
+
