@@ -1,6 +1,10 @@
 '''
 142. Linked List Cycle II
 
+https://leetcode.com/problems/linked-list-cycle-ii/
+similar problem: "141. Linked List Cycle"
+https://leetcode.com/problems/linked-list-cycle/
+
 Given a linked list, return the node where the cycle begins.
 If there is no cycle, return null.
 
@@ -37,7 +41,35 @@ class Solution(object):
             fast = fast.next.next
             slow = slow.next
             if fast == slow:
+                while slow != head:
+                    slow = slow.next
+                    head = head.next
                 return slow
 
-        return False
+        return None
+# or
+class Solution(object):
+    def detectCycle(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        fast = slow = head  # or fast, slow = head, head
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+            if fast == slow:
+                break
 
+            while slow != head:
+                slow = slow.next
+                head = head.next
+            return slow # or head
+
+        return None
+'''
+思路：
+
+大致意思是当Fast和Slow重合的时候，他们离开起始Loop的距离
+# 和Head离开Loop起始的距离是相等的
+'''
