@@ -55,7 +55,8 @@ Base Case的返回条件是当head或者head.next为空，则开始返回
 
 Step 2: Recurse到底
 new_head = self.reverseList(head.next)
-在做任何处理之前，我们需要不断的递归，直到触及到Base Case,。当我们移动到最后一个Node以后, 将这个Node定义为我们新的head, 取名new_head. 我们从new_head开始重复性的往前更改指针的方向
+在做任何处理之前，我们需要不断的递归，直到触及到Base Case,。
+当我们移动到最后一个Node以后, 将这个Node定义为我们新的head, 取名new_head. 我们从new_head开始重复性的往前更改指针的方向
 
 
 Step 3: 返回并且更改指针方向
