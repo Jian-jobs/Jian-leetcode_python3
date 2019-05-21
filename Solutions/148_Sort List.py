@@ -18,6 +18,7 @@ Input: -1->5->3->4->0
 Output: -1->0->3->4->5
 
 '''
+
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, x):
@@ -37,18 +38,18 @@ class Solution:
             slow = slow.next
             fast = fast.next.next
 
-        mid = slow
+
         # cut down the first part
         prev.next = None #截断
 
         l = self.sortList(head) #递归
-        r = self.sortList(mid)
+        r = self.sortList(slow)
         return self.merge(l, r)
 
 
     #这是一种类似于创建一个头的DummyNode，把Head设置成Prev，Cur设置成head.next
     def merge(self, l, r):
-        guard = cur = ListNode(None)
+        guard = cur = ListNode(0)
         while l and r:
             if l.val <= r.val:
                 cur.next = l
@@ -59,3 +60,10 @@ class Solution:
             cur = cur.next
         cur.next = l or r # l and r at least one is None
         return guard.next
+'''
+# 思路
+第一步，如何等分地划分，可以使用快慢指针的方式，当快指针到达结尾，那么慢指针到了中间位置，把链表进行截断分成了两个。
+
+第二步，合并有序的序列，对于单链表来说，正好用到了Merge Two Sorted Lists里的把两个链表合并的方法。
+
+'''
