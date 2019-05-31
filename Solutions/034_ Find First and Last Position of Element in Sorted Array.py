@@ -2,8 +2,8 @@
 34. Find First and Last Position of Element in Sorted Array
 
 https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
-similar problem: "35. Search Insert Position"
-https://leetcode.com/problems/search-insert-position/
+similar problem: "704. Binary Search"
+https://leetcode.com/problems/binary-search/
 
 Given an array of integers nums sorted in ascending order,
 find the starting and ending position of a given target value.
@@ -25,3 +25,37 @@ Output: [-1,-1]
 
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
+        left = self.lowwer(nums, target)
+        right = self.higher(nums, target)
+        if left == right:
+            return [-1, -1]
+        return [left, right -1]
+
+    def lowwer(self, nums, target):
+        left, right = 0, len(nums)
+        while left < right:
+            mid = left + (right-left) // 2
+            if nums[mid] < target: # <注意！！
+                left = mid + 1
+            else:
+                right = mid
+        return left
+
+    def higher(self, nums, target):
+        left, right = 0, len(nums)
+        while left < right:
+            mid = left + (right-left) // 2
+            if nums[mid] <= target: # <=注意！！
+                left = mid + 1
+            else:
+                right = mid
+        return left
+
+# reference: bisect模块 时间复杂度是O(logn)，空间复杂度是O(1)
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        left = bisect.bisect_left(nums, target)
+        right = bisect.bisect_right(nums, target)
+        if left == right:
+            return [-1, -1]
+        return [left, right -1]
