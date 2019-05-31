@@ -39,7 +39,7 @@ class Solution:
 
 # 自己写的
 
-# reference：
+# reference：二叉树
 class Solution:
     def search(self, nums, target):
         left,right = 0, len(nums)-1
