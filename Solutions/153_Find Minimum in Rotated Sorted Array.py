@@ -23,18 +23,16 @@ Output: 0
 class Solution:
     def findMin(self, nums):
         lo, hi = 0, len(nums) - 1
+        while lo < hi:
 
-
-class Solution(object):
-    def search(self, nums, target):
-        lo, hi = 0, len(nums) - 1
-        while lo <= hi:
-            mid = (lo+hi) // 2
-            if nums[mid] == target:
-                return mid
-            if nums[0] <= target < nums[mid] or target < nums[mid] < nums[0] or nums[mid] < nums[0] <= target:
-                hi = mid - 1
+            if nums[lo]<nums[hi]:
+                return nums[lo]
             else:
-                lo = mid + 1
+                mid = lo + (hi - lo) // 2
+                if nums[mid]<nums[hi]:
+                    hi = mid
+                else:
+                    lo = mid+1
+        return nums[lo]
 
-        return -1
+
