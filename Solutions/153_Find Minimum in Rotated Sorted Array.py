@@ -36,3 +36,5 @@ class Solution:
         return nums[lo]
 
 
+# reference:
+# https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/discuss/48608/Share-my-pyhthon-code-with-binary-search
