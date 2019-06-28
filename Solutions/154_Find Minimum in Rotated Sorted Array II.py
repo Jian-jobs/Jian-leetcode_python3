@@ -42,6 +42,8 @@ class Solution:
 
         return nums[lo]
 
+
+'''
 wrong:
 class Solution:
     def findMin(self, nums: List[int]) -> int:
@@ -55,3 +57,4 @@ class Solution:
                 lo = mid + 1
 
         return nums[lo]
+'''
