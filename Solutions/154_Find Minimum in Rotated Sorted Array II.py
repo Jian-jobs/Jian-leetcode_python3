@@ -42,7 +42,8 @@ class Solution:
 
         return nums[lo]
 
-
+# reference:
+# https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/discuss/48908/Clean-python-solution
 '''
 wrong:
 class Solution:
