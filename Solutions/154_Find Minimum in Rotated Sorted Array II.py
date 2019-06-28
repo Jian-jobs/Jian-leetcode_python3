@@ -27,7 +27,7 @@ Would allow duplicates affect the run-time complexity? How and why?
 '''
 
 
-correct:
+# correct:
 class Solution:
     def findMin(self, nums: List[int]) -> int:
         lo, hi = 0, len(nums) - 1
