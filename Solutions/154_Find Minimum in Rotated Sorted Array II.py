@@ -25,3 +25,33 @@ Note:
 This is a follow up problem to Find Minimum in Rotated Sorted Array.
 Would allow duplicates affect the run-time complexity? How and why?
 '''
+
+
+correct:
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
+        lo, hi = 0, len(nums) - 1
+        while lo < hi:
+            mid = lo + (hi - lo) // 2
+            if nums[mid] > nums[hi]:
+                lo = mid + 1
+
+            else:
+
+                hi = mid if nums[hi] != nums[mid] else hi - 1
+
+        return nums[lo]
+
+wrong:
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
+        lo, hi = 0, len(nums)-1
+        while lo < hi:
+            mid = lo + (hi - lo) // 2
+            # if nums[mid] < nums[hi]: wrong! should use >
+                hi = mid if nums[hi] != nums[mid] else hi -1
+
+            else:
+                lo = mid + 1
+
+        return nums[lo]
