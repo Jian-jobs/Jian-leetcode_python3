@@ -24,4 +24,9 @@ Note:
 1. 3 <= A.length <= 10000
 2. 0 <= A[i] <= 10^6
 3. A is a mountain, as defined above.
+
 '''
+
+
+class Solution:
+    def peakIndexInMountainArray(self, A: List[int]) -> int:
