@@ -46,7 +46,7 @@ class Solution:
 
         # handle condition 3
         while lo < hi:
-            mid = lo + (hi - lo) // 2
+            mid = lo + (hi - lo) // 2 #or (lo + hi) // 2
             if nums[mid] > nums[mid + 1] and nums[mid] > nums[mid - 1]:
                 return mid
 
@@ -57,4 +57,6 @@ class Solution:
 
                 hi = mid - 1
         # handle condition 1 and 2
-        return hi if nums[lo] >= nums[hi] else lo
+        return lo if nums[lo] >= nums[hi] else hi
+# refernce:
+# https://leetcode.com/problems/find-peak-element/discuss/50259/My-clean-and-readable-python-solution
