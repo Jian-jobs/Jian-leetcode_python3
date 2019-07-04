@@ -10,7 +10,7 @@ Reference: 排名分先后
 -[推荐这位演员~](https://buptwc.com/archives/page/19/)
 -[细语呢喃的答案](https://www.hrwhisper.me/leetcode-algorithm-solution/)
 
-* 后面可能会增加一个题目分类，联系的整理表
+* 后面可能会增加一个题目分类，联系的整理表 (●ﾟωﾟ●)
 
 All the problems on [LeetCode](https://leetcode.com/problemset/all/)  
 
