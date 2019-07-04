@@ -7,8 +7,8 @@ Reference: 排名分先后
 - [花花酱 LeetCode 题目分类 ](https://docs.google.com/spreadsheets/d/1SbpY-04Cz8EWw3A_LBUmDEXKUMO31DBjfeMoA0dlfIA/edit?usp=sharing)
 
 * 答案参考
--[推荐这位演员~](https://buptwc.com/archives/page/19/)
--[细语呢喃的答案](https://www.hrwhisper.me/leetcode-algorithm-solution/)
+- [推荐这位演员~](https://buptwc.com/archives/page/19/)
+- [细语呢喃的答案](https://www.hrwhisper.me/leetcode-algorithm-solution/)
 
 * 后面可能会增加一个题目分类，联系的整理表 (●ﾟωﾟ●)
 
@@ -18,4 +18,4 @@ All the solutions on [Solutions](https://github.com/Jian-Chueng/leetcode_python3
 
 LICENSE: [Apache License 2.0](https://github.com/Jian-Chueng/leetcode_python3/blob/master/LICENSE)
 
-security：[security](https://github.com/Jian-Chueng/leetcode_python3/blob/master/SECURITY.md)
+[security](https://github.com/Jian-Chueng/leetcode_python3/blob/master/SECURITY.md)
