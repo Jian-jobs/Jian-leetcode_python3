@@ -11,8 +11,10 @@ Reference: 排名分先后
 - [细语呢喃的答案](https://www.hrwhisper.me/leetcode-algorithm-solution/)
 
 * 后面可能会增加一个题目分类，联系的整理表 (●ﾟωﾟ●)
-[这儿呢！](https://github.com/Jian-Chueng/leetcode_python3/blob/master/Solutions/852_Peak%20Index%20in%20a%20Mountain%20Array.py)
 
+  [这儿呢！](https://github.com/Jian-Chueng/leetcode_python3/blob/master/Solutions/852_Peak%20Index%20in%20a%20Mountain%20Array.py)
+
+***
 All the problems on [LeetCode](https://leetcode.com/problemset/all/)  
 
 All the solutions on [Solutions](https://github.com/Jian-Chueng/leetcode_python3/tree/master/Solutions)
