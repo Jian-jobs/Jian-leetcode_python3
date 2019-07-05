@@ -4,6 +4,7 @@
 
 # List
 * [002. Add Two Numbers](https://github.com/Jian-Chueng/leetcode_python3/blob/master/Solutions/002_Add%20Two%20Numbers.py), similar problem: "445. Add Two Numbers II"
+* [007. Reverse Integer](https://leetcode.com/problems/reverse-integer/)
 * [021. Merge Two Sorted Lists](https://github.com/Jian-Chueng/leetcode_python3/blob/master/Solutions/021_Merge%20Two%20Sorted%20Lists.py), similar problem: "23. Merge k Sorted Lists"
 * [023. Merge k Sorted Lists](https://github.com/Jian-Chueng/leetcode_python3/blob/master/Solutions/023_Merge%20k%20Sorted%20Lists.py), similar problem: "21. Merge Two Sorted Lists"
 * [024. Swap Nodes in Pairs](https://github.com/Jian-Chueng/leetcode_python3/blob/master/Solutions/024_Swap%20Nodes%20in%20Pairs.py), similar problem: "445. Add Two Numbers II"
