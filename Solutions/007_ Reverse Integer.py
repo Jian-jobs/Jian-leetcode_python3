@@ -30,6 +30,7 @@ class Solution:
     def reverse(self, x: int) -> int:
         a = str(x)
         res = int("-"+a[1:][::-1]) if x<0 else int(a[::-1])
+        # or res = int("-"+a[:0:-1]) if x<0 else int(a[::-1])
         return res if -2**31 < res < 2**31-1 else 0
 
 '''
