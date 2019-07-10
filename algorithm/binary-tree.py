@@ -23,7 +23,7 @@ Output: [1,2,3]
 #         self.right = None
 
 class Solution:
-    def preorderTraversal(self, root: TreeNode) -> List[int]
+    def preorderTraversal(self, root: TreeNode) -> List[int]:
         """
         :type root: TreeNode
         :rtype: List[int]
