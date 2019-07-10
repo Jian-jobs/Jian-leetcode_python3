@@ -57,6 +57,37 @@ and they will not be two consecutive dots.
 '''
 
 
+def compareVersion(self, version1, version2):
+    """
+    :type version1: str
+    :type version2: str
+    :rtype: int
+    """
+    version1 = [int(val) for val in version1.split(".")]
+    version2 = [int(val) for val in version2.split(".")]
+
+    if len(version1) > len(version2):
+        min_version = version2
+        max_version = version1
+    else:
+        min_version = version1
+        max_version = version2
+
+    # Compare up to min character
+    for i in range(len(min_version)):
+        if version1[i] > version2[i]:
+            return 1
+        elif version1[i] < version2[i]:
+            return -1
+
+    if len(version1) == len(version2):
+        return 0
+
+    for j in range(i + 1, len(max_version)):
+        if max_version[j] > 0:
+            return 1 if max_version == version1 else - 1
+    return 0
+
 class Solution:
     def compareVersion(self, version1: str, version2: str) -> int:
         s1 = version1.split('.')
@@ -77,6 +108,7 @@ class Solution:
         return 0
 
 # refernece:
+# https://leetcode.com/problems/compare-version-numbers/discuss/311157/Python-Easy-to-Understand-O(n)
 # https://leetcode.com/problems/compare-version-numbers/discuss/51008/Concise-Python-code
 
 
