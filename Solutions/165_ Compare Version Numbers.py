@@ -63,6 +63,7 @@ def compareVersion(self, version1, version2):
     :type version2: str
     :rtype: int
     """
+    # 学学
     version1 = [int(val) for val in version1.split(".")]
     version2 = [int(val) for val in version2.split(".")]
 
