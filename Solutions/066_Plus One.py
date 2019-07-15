@@ -24,10 +24,11 @@ Explanation: The array represents the integer 4321.
 
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
-        nums = 0
+        num = 0
         for i in range(len(digits)):
-            nums += digits[i] * pow(10, (len(digits)-1-i))
-            return [int(i) for i in str(nums+1)]
+            num += digits[i]* pow(10, (len(digits)-1-i))
+        return [int(i) for i in str(num+1)]
 
+# pow(x,y) 等价于 x**y
 # reference:
 # https://leetcode.com/problems/plus-one/discuss/24085/Simple-Python-solution-with-explanation-(Plus-One)
