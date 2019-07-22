@@ -3,7 +3,7 @@ This repository shares my solutions of problems in leetcode
 
 Reference: 排名分先后
 * 题目推荐
-> [Leetcode 分类顺序表第二版(增加重点250题)](https://cspiration.com/leetcodeClassification#10301)
+> [Leetcode 分类顺序表第二版(增加重点250题)](https://cspiration.com/leetcodeClassification)
 
 > [花花酱 LeetCode 题目分类 ](https://docs.google.com/spreadsheets/d/1SbpY-04Cz8EWw3A_LBUmDEXKUMO31DBjfeMoA0dlfIA/edit?usp=sharing)
 
