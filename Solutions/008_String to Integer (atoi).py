@@ -51,8 +51,53 @@ Output: -2147483648
 Explanation: The number "-91283472332" is out of the range of a 32-bit signed integer.
              Thefore INT_MIN (−231) is returned.
 '''
-
-
+# reference：
+# https://leetcode.com/problems/string-to-integer-atoi/discuss/342416/Python-Easy-to-Read-Solution
 class Solution:
     def myAtoi(self, str: str) -> int:
 
+        INT_MIN = -2 ** 31
+        INT_MAX = 2 ** 31 - 1
+
+        str = str.strip()
+        result = "0"
+        negative = 0
+
+        if len(str) == 0:
+            return 0
+
+        if str[0] == '-':
+            negative = 1
+            str = str[1:]
+
+        elif str[0] == '+':
+            str = str[1:]
+
+        for i in str:
+            if i not in "0123456789":
+                break
+            result += i
+
+        total = int(result)
+        if negative:
+            total = -total
+        return max(min(INT_MAX, total), INT_MIN)
+
+'''
+class Solution:
+    def myAtoi(self, s: str) -> int:
+        ###better to do strip before sanity check (although 8ms slower):
+        # ls = list(s.strip())
+        # if len(ls) == 0 : return 0
+        if len(s) == 0: return 0
+        ls = list(s.strip())
+
+        sign = -1 if ls[0] == '-' else 1
+        if ls[0] in ['-', '+']: del ls[0]
+        ret, i = 0, 0
+        while i < len(ls) and ls[i].isdigit():
+            ret = ret * 10 + ord(ls[i]) - ord('0')
+            i += 1
+        return max(-2 ** 31, min(sign * ret, 2 ** 31 - 1))
+
+'''
