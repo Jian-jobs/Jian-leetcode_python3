@@ -1,4 +1,24 @@
 # leetcode_python3
+1、刷leetcode
+
+ 之前没刷过leetcode，一开始很慢，后来发现这个跟高考数学题一样，你刷过了题型你以后遇到了就会，不然就不会。于是采取了如下策略：  
+
+
+刷题先看懂题意，3min内不懂直接看答案，我第一阶段只刷简单题，参考别人的答案https://www.jianshu.com/p/b71fc7307e42 【效率保证】
+
+
+
+**按照类型刷**，比如吧“数组”类型简单题全干掉了，才刷字符串，这样不需要在不同的题型之间切换 【效率，巩固某类题型】    
+
+
+
+看英文版leetcode的讨论区，高赞Python答案  【参考优秀的答案】
+    
+
+ **自己分阶段刷**，我称之为season。season1刷80题，season刷100题，season刷剩下的50多道简单题。 在刷season2时会复习season1，season3时复习season1和season2   【巩固题型，据说人要记忆7次才能真正记住】
+
+
+
 This repository shares my solutions of problems in leetcode 
 
 Reference: 排名分先后
